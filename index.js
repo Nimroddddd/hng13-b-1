@@ -135,7 +135,7 @@ app.post("/strings", verifyString, (req, res) => {
     length: value.length,
     is_palindrome: isPalindrome,
     unique_characters: Object.keys(characterFrequencyMap).length,
-    word_count: value.split(" ").length,
+    word_count: value.trim().replace(/\s+/g, ' ').split(" ").length,
     sha256_hash: hashed,
     character_frequency_map: characterFrequencyMap,
   }
